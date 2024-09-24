@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniList Comment Section</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="comment-section">
+        <h2>Comments</h2>
+        <form id="commentForm">
+            <input type="text" id="username" placeholder="Your Username">
+            <input type="url" id="pfpUrl" placeholder="Profile Picture URL">
+            <textarea id="comment" placeholder="Write your comment..."></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+        
+        <div id="commentsContainer"></div>
+        
+    </div>
+
+    <script src="script.js"></script>
+<!-- First Popup: Confirmation before reporting -->
+<div id="reportConfirmationPopup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <p>Are you sure you want to report this comment?</p>
+        <button id="confirmReport">Yes, Report</button>
+        <button id="cancelReport">Cancel</button>
+    </div>
+</div>
+
+<!-- Second Popup: After reporting -->
+<div id="reportSentPopup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <p>Your report has been sent to the moderators!</p>
+        <button id="closePopup">Close</button>
+    </div>
+</div>
+       
+</body>
+</html>

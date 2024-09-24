@@ -1,0 +1,240 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* Full black background */
+    color: #ffffff; /* White text for contrast */
+    padding: 20px;
+}
+
+.comment-section {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #111111; /* Dark black for the comment container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff; /* White text for headers */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #191919; /* Black for form fields */
+    color: #ffffff;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4d4d4d; /* Subtle grey for buttons */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #333333; /* Darker grey on hover */
+}
+
+#commentsContainer {
+    margin-top: 20px;
+}
+
+.comment-box {
+    background-color: #191919; /* Black for comment boxes */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+    color: #ffffff;
+}
+
+.comment-box p {
+    color: #b3b3b3; /* Slightly lighter grey for comment text */
+}
+
+/* Style for the edit, delete, and report buttons */
+.comment-box .edit-btn, .comment-box .delete-btn, .comment-box .report-btn {
+    position: absolute;
+    top: 10px;
+    background-color: #4d4d4d; /* Grey for buttons */
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+/* Positioning the buttons */
+.comment-box .edit-btn {
+    right: 120px; /* Position edit button first */
+}
+
+.comment-box .delete-btn {
+    right: 60px; /* Position delete button next */
+    background-color: #d63031; /* Red for delete button */
+}
+
+.comment-box .delete-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+.comment-box .report-btn {
+    right: 10px; /* Position report button last */
+    background-color: #f39c12; /* Yellow for report button */
+}
+
+.comment-box .report-btn:hover {
+    background-color: #e67e22; /* Darker yellow on hover */
+}
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+}
+
+.modal-content {
+    background-color: #111111;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    color: white;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #ffffff;
+}
+
+.modal-content p {
+    color: #b3b3b3;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #d63031; /* Red for report button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Popup general styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black transparent background */
+}
+
+.popup-content {
+    background-color: #111111;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15% auto;
+    width: 300px;
+    color: white;
+    text-align: center;
+}
+
+.popup-content p {
+    color: #b3b3b3;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d63031; /* Red for the button */
+    color: white;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+.comment-box {
+    display: flex;
+    flex-direction: row; /* Align PFP and comment info horizontally */
+    background-color: #191919; /* Black for comment boxes */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.pfp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* This makes the image circular */
+    margin-right: 15px; /* Space between PFP and username */
+}
+
+.comment-content {
+    flex-grow: 1;
+}
+
+button {
+    margin-right: 5px;
+}
+
+button.edit-btn,
+button.save-btn,
+button.delete-btn,
+button.report-btn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4d4d4d; /* Subtle grey for buttons */
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333333; /* Darker grey on hover */
+}
